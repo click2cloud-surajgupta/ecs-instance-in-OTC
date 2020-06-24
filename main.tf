@@ -31,7 +31,7 @@ resource "opentelekomcloud_networking_network_v2" "network" {
 
 resource "opentelekomcloud_networking_subnet_v2" "subnet" {
   name            = "suraj_subnet"
-  network_id      = "${opentelekomcloud_networking_network_v2.network.id}"
+  network_id      = opentelekomcloud_networking_network_v2.network.id
   cidr            = "${var.vpc_cidr}"
 }
 
